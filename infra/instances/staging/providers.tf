@@ -1,8 +1,9 @@
 terraform {
   backend "s3" {
-    bucket = "my-banana-bucket"
-    key    = "banana-state-staging"
-    region = "us-east-1"
+    bucket         = "siluryan-terraform-state"
+    key            = "siluryan-state-staging"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-state-lock-dynamo"
   }
 
   required_providers {
